@@ -1,10 +1,10 @@
 // User - boss
 
-{"email":"boss@work.com", "password":"parola", "is_profile_admin": true}
+{"email":"boss@work.com", "password":"", "is_profile_admin": true}
 
 // User - employee
 
-{"email":"employee@work.com", "password":"parola", "is_profile_admin": false}
+{"email":"employee@work.com", "password":"", "is_profile_admin": false}
 
 // Profile
 
