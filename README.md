@@ -1,125 +1,87 @@
-# europa
+# API docs
+** API mounting route** `<host_url>/api`
 
-## API docs
-
-### HTTP Header
+## HTTP Header
 
 **Authorization Header:**
 
-`"Authorization"` : `"Bearer <access_token>"`
+`X-Access-Token` : `<access_token>`
 
 
+## User and Authentication
 
-### User and Authentication
+#### Create profile_admin User
+> Note: This is boss.
 
-#### Create new user
-
-**Method** `POST` **URL** `/api/auth`
+**Method** `POST` **URL** `/admin/users`
 
 **Request:**
 `{
-  "e": <email>,
-  "p": <password>
+  "email": <email>,
+  "password": <password>,
+  "is_profile_admin": true
 }`
 
 **Response:**
 
 > StatusCode:
-<span style="color:green">`200`</span> or <span style="color:red">`500`</span>
+`200 or 500`
 
-**Body:** `null`
+> Body: `null`
 
 
-#### Login
-**Method** `POST` **URL** `/api/auth/token`
+#### Create employee User
+
+**Method** `POST` **URL** `/users`
 
 **Request:**
 `{
-  "e": <email>,
-  "p": <password>
+  "email": <email>,
+  "password": <password>,
+  "is_profile_admin": false // true if user is owner
 }`
 
 **Response:**
-> StatusCode: <span style="color:green">`200`</span>
 
+> StatusCode:
+`200 or 500`
+
+> Body: `null`
+
+
+#### Get auth token
+
+**Method** `POST` **URL** `/auth/token`
+
+**Request:**
+`{
+  "email": <email>,
+  "password": <password>
+}`
+
+**Response:**
+
+> StatusCode:
+`500` Server error
+
+>> Body: `null`
+
+> StatusCode:
+`200`
 >> Body:
 `{
-  "access_token" : <some long token>,
-  "token_type" : "bearer",
-  "exp" : <expiration date for token>
+  "success": <true|false>,
+  "exp": "72h",
+  "token": <token>,
 }`
 
-> StatusCode: <span style="color:red">`500`</span>
 
----
+## Resources
 
-### Bill Resource
+Profile **Method** `POST` `GET` **URL** `/profiles`
 
-#### Insert new bill
-**Method** `POST` **URL** `/api/bill`
+Product **Method** `POST` `GET` **URL** `/products`
 
-**Request:**
-`{
-  "Vendor": <>
-  "CIF": <>
-  "Adress": <>
-  "State": <>
-  "IBAN": <>
-  "Bank": <>
-  "Phone": <>
-  "Fax": <>
-  "Email": <>
-  "Web": <>,
-  "Capital": <>,
-  "No": <>,
-  "Series": <>
-}`
+Delegate **Method** `POST` `GET` **URL** `/delegates`
 
-**Response:**
-> StatusCode:
-  <span style="color:green">`200`</span>
-
->> Body:
-  `null`
-
->> **TODO** Should return the mongo `id` of the inserted document
-
-> StatusCode:
-  <span style="color:red">`500`</span>
-
->> Body: `null`
-
-
-#### Get all bills
-**Method** `GET` **URL** `/api/bills`
-
-**Response:**
-
-Returns an `array []` of `Bill` model.
-
-> StatusCode:
-<span style="color:green">`200`</span>
-
->> Body: `[{}, ...]`
-
-> StatusCode:
-<span style="color:red">`500`</span>
->> Body: `null`
-
-
-#### Get bill by `id`
-**Method** `GET` **URL** `/api/bill/{id}`
-
-**Response:**
-
-Returns one document of type `Bill` with additional fields:
-`ID, UserID`
-
-> StatusCode:
-<span style="color:green">`200`</span>
-
->> Body: `<{}>`
-
-> StatusCode:
-<span style="color:red">`500`</span>
->> Body: `null`
+Bill **Method** `POST` `GET` **URL** `/bills`
