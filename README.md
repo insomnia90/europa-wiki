@@ -85,3 +85,6 @@ Product **Method** `POST` `GET` **URL** `/products`
 Delegate **Method** `POST` `GET` **URL** `/delegates`
 
 Bill **Method** `POST` `GET` **URL** `/bills`
+
+## Pagination
+Url query `/bills?page=x&per_page=y` 
