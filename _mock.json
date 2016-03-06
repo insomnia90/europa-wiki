@@ -1,0 +1,115 @@
+// User - boss
+
+{"email":"boss@work.com", "password":"parola", "is_profile_admin": true}
+
+// User - employee
+
+{"email":"employee@work.com", "password":"parola", "is_profile_admin": false}
+
+// Profile
+
+{
+  "is_self": true,
+  "register": "j/k/2001",
+  "address": "acolo acasa",
+  "bank": "transilvania",
+  "capital": "1",
+  "cif": "12412512512512",
+  "email": "e@e.com",
+  "fax": "90231124",
+  "iban": "12241214",
+  "phone": "02112412",
+  "state": "bucuresti",
+  "vendor": "a1213213casa",
+  "web": "www.acasa.com"
+}
+
+// Delegate
+
+{
+  "cnp": "12321412412",
+  "no": "12131",
+  "series": "RR",
+  "name": "full name",
+  "transport": "B01ERU"
+}
+
+// Product
+
+{
+  "name": "televizor",
+  "um": "buc",
+  "vat": "20",
+  "price": "1",
+  "currency": "ron"
+}
+
+// Bill
+
+{
+  "owner" : {
+    "address": "acolo acasa",
+    "bank": "transilvania",
+    "capital": "1",
+    "cif": "12412512512512",
+    "email": "e@e.com",
+    "fax": "90231124",
+    "iban": "12241214",
+    "phone": "02112412",
+    "self": "true",
+    "state": "bucuresti",
+    "userid": "566d73d85ce423c760b9e010",
+    "vendor": "a1213213casa",
+    "web": ""
+  },
+
+  "client": {
+    "address": "acolo acasa",
+    "bank": "transilvania",
+    "capital": "1",
+    "cif": "12412512512512",
+    "email": "e@e.com",
+    "fax": "90231124",
+    "iban": "12241214",
+    "phone": "02112412",
+    "self": "false",
+    "state": "bucuresti",
+    "userid": "566d73d85ce423c760b9e010",
+    "vendor": "a1213213casa",
+    "web": ""
+  },
+
+  "products": [
+    {
+      "product": {
+        "name": "fanta",
+        "um": "buc",
+        "vat": "20",
+        "price": "1",
+        "currency": "ron"
+      },
+      "quantity": "1"
+    },
+    {
+      "product": {
+        "name": "cola",
+        "um": "buc",
+        "vat": "20",
+        "price": "1",
+        "currency": "ron"
+      },
+      "quantity": "2"
+    }
+  ],
+
+  "delegate": {
+    "cnp": "12321412412",
+    "no": "12131",
+    "series": "RR",
+    "name": "full name"
+  },
+
+  "price": "1000",
+  "total_vat": "10",
+  "status": "waiting"
+}
