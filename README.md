@@ -1,5 +1,5 @@
 # API docs
-** API mounting route** `<host_url>/api`
+**API mounting route** `<host_url>/api`
 
 ## HTTP Header
 
